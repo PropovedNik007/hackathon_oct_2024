@@ -52,13 +52,14 @@ There is a super simple RAG implementation to help getting you started in [`samp
 ## Hints
 Very simple [RAG pipeline](https://medium.com/@ahmed.mohiuddin.architecture/using-ai-to-chat-with-your-documents-leveraging-langchain-faiss-and-openai-3281acfcc4e9) to start with.
 
+You can [extract openAI API token usage](https://help.openai.com/en/articles/6614209-how-do-i-check-my-token-usage) from the response with `response['usage']`.
 
-You can use [tiktoken](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken) to count token usage:
+You can use [tiktoken](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken) to manually count tokens of a string:
 ```bash
 import tiktoken
 tokenizer = tiktoken.get_encoding("o200k_base")  # for gpt 4o
 ```
 
-
 [Structured outputs](https://platform.openai.com/docs/guides/structured-outputs/introduction) force the LLM to output e.g. only integers.
 
+<br>
