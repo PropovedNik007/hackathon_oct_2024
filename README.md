@@ -9,7 +9,7 @@ https://openai.com/api/pricing/
 <br>
 
 ## Set up OpenAI API Key
-Copy your teams API key from the [slack](https://join.slack.com/t/aim-ai-impact-mission/shared_invite/zt-2sfahg4h1-Pb7~Ft4ZITZKGAHihEK6QQ)) channel description and place it in the `.env_template` file.
+Copy your teams API key from the [slack](https://join.slack.com/t/aim-ai-impact-mission/shared_invite/zt-2sfahg4h1-Pb7~Ft4ZITZKGAHihEK6QQ) channel description and place it in the `.env_template` file.
 
 Don't forget to replace the filename to `.env` afterwards!
 
