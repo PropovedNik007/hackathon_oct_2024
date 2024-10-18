@@ -1,6 +1,8 @@
 # AIM Hackathon Oct 2024 - Template
 Repository for the first AIM Hackathon together with TIMETOACT GROUP Österreich on 19.10.2024
 
+Challenge explanation and ideas can be found in the [slides](https://timetoactgroup-my.sharepoint.com/:p:/g/personal/felix_krause_timetoact_at/ERZIULziE5pIu7F8MmgPxHwBVuhy9USUtioJsX_Y_31c_g?e=wrWNH4)
+
 <br>
 
 ## Set up OpenAI API Key
@@ -18,10 +20,10 @@ Check out the sample code to see how to load the key.
 The dataset [`reports.json`](data/reports.json) contains the following keys:
 - `company_name`: name of the company
 - `year`: year of the report (if report is for two years, the first year is used)
-- `dataset`: subdataset name
-    - `scraped`: scraped from a website, might contain broken links and irrelevant pdfs (90 samples, 2016-2024)
-    - `austria`: reports from mainly Austrian companies (33 samples)
+- `dataset`: "subdataset" name
     - `handcrafted`: selected by hand, ESG and sustainability reports (23 samples, 2019, 2021, 2023 for every company)
+    - `austria`: reports from mainly Austrian companies, hence often in german (33 samples)
+    - `scraped`: scraped from a website, might contain broken links and irrelevant pdfs (90 samples, 2016-2024)
 - `pdf_url`: link to the pdf report
 
 <br>
