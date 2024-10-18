@@ -26,6 +26,9 @@ The dataset [`reports.json`](data/reports.json) contains the following keys:
 
 
 ## Jump start
+### Fork this repository
+Simply fork this repository to start working on your project.
+
 ### Set up environment
 Create a new environment (e.g. with conda)
 ```bash
@@ -36,7 +39,6 @@ Install the requirements
 ```bash
 pip install -r requirements.txt
 ```
-
 
 ### Sample code
 There is a super simple RAG implementation to help getting you started in [`sample_code.ipynb`](sample_code.ipynb).
