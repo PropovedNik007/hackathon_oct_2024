@@ -3,13 +3,10 @@ Repository for the first AIM Hackathon together with TIMETOACT GROUP Österreich
 
 <br>
 
-## Check out OpenAI pricing 
-https://openai.com/api/pricing/
-
-<br>
-
 ## Set up OpenAI API Key
 Copy your teams API key from the [slack](https://join.slack.com/t/aim-ai-impact-mission/shared_invite/zt-2sfahg4h1-Pb7~Ft4ZITZKGAHihEK6QQ) channel description and place it in the `.env_template` file.
+
+You might want to check [OpenAI API pricing](https://openai.com/api/pricing/), to stay within the 20$ limit during the day.
 
 Don't forget to replace the filename to `.env` afterwards!
 
@@ -45,7 +42,7 @@ pip install -r requirements.txt
 ```
 
 ### Sample code
-There is a super simple RAG implementation to help getting you started in [`sample_code.ipynb`](sample_code.ipynb).
+There is some sample code to help you getting started in [`sample_code.ipynb`](sample_code.ipynb).
 
 <br>
 
