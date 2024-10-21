@@ -1,0 +1,186 @@
+/* Upload form alignment */
+.upload-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%; 
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.custom-file-upload:hover {
+    background-color: #45a049;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.upload-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.upload-btn:hover {
+    background-color: #45a049;
+}
+
+/* Spinner Styling */
+.loading-spinner {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+    display: none; /* Hidden by default */
+}
+
+.loading-spinner img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Progress Bar */
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Progress Bar Styles */
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.progress-bar {
+    position: relative;
+    width: 100%; 
+    height: 30px;
+    background-color: #f3f3f3;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0%; /* Default width */
+    background-color: #4CAF50;
+    transition: width 1s ease-in-out;
+}
+
+.progress-text {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Legend Styling */
+.legend-container {
+    flex: 1;
+    max-width: 250px;
+    margin-right: 20px;
+}
+
+.color-legend {
+    list-style: none;
+    padding: 0;
+}
+
+.color-legend li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.legend-color {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+/* Chart Styling */
+.chart-container {
+    flex: 2;
+    width: 70%;
+    margin-left: 20px;
+    max-width: 500px;
+}
+
+/* .chart-container canvas {
+    width: 100% !important; 
+    height: 400px !important; /* Make sure the chart fits properly */
+/* } */ 
+
+/* Category Colors */
+.lesser-evil-color {
+    background-color: rgba(0, 102, 255, 1); /* Blue */
+}
+
+.lack-of-accuracy-color {
+    background-color: rgba(255, 87, 34, 1); /* Orange */
+}
+
+.lack-of-real-product-features-color {
+    background-color: rgba(153, 102, 255, 1); /* Purple */
+}
+
+.lack-of-evidence-color {
+    background-color: rgba(255, 99, 132, 1); /* Red */
+}
+
+.hidden-alternative-costs-color {
+    background-color: rgba(128, 128, 128, 1); /* Grey */
+}
+
+/* Styling for the download button */
+.download-btn {
+    padding: 12px 25px;  
+    background-color: #4CAF50;  
+    color: white; 
+    border-radius: 8px;  
+    font-size: 16px;  
+    text-decoration: none;  
+    display: inline-block; 
+    font-weight: bold;  
+    transition: background-color 0.3s ease, transform 0.3s ease;  
+}
+
+.download-btn:hover {
+    background-color: #45a049; 
+    transform: translateY(-3px); 
+    text-decoration: underline; 
+}
+
+.download-btn:active {
+    transform: translateY(1px);  
+}

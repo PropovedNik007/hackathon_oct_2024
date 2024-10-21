@@ -1,0 +1,43 @@
+/* Mobile (default) */
+.container {
+    flex-direction: column;
+    margin: 20px auto;
+    max-width: 90%;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row; 
+        justify-content: space-between;
+        max-width: 95%;
+        margin: 30px auto;
+    }
+
+    .section {
+        flex: 1 1 45%;
+        margin: 10px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .container {
+        justify-content: space-between;
+        margin: 50px auto;
+        max-width: 1200px;
+    }
+
+    .section {
+        flex: 1 1 45%;
+        margin: 15px;
+    }
+
+    .progress-bar {
+        width: 70%;
+    }
+
+    iframe {
+        height: 600px;
+    }
+}

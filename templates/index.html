@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenwashing Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/components.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/media-queries.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="{{ url_for('static', filename='js/main.js') }}"></script> -->
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</head>
+<body>
+    <header>
+        <h1 class="title">Greenwashing Detector</h1>
+        <p class="subtitle">Upload a PDF file and receive a greenwashing score</p>
+    </header>
+
+    <!-- Loading spinner (hidden by default) -->
+    <div id="loading-spinner" class="loading-spinner" style="display: none;">
+        <img src="{{ url_for('static', filename='spinner.gif') }}" alt="Loading...">
+    </div>
+
+    <!-- Flash Messages Section -->
+    <div class="flash-messages">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <!-- Main container for the layout -->
+    <div class="container">
+        <!-- Upload section -->
+        <div class="section upload-section">
+            <h2 class="section-title">Upload PDF</h2>
+            <form action="/" method="POST" enctype="multipart/form-data" class="upload-form" onsubmit="showSpinner()">
+                <label for="file-upload" class="custom-file-upload">
+                    <i class="fa fa-cloud-upload"></i> Choose File
+                </label>
+                <input id="file-upload" type="file" name="file" accept="application/pdf" required onchange="updateFileName()">
+                <span id="file-name">No file chosen</span>
+                <input type="submit" value="Upload" class="btn upload-btn">
+            </form>
+        </div>
+
+        <!-- Score section -->
+        <div class="section score-section">
+            <h2 class="section-title">Greenwashing Score</h2>
+            <div id="score-value" style="display: none;">{{ score or 0 }}</div> <!-- Hidden score element -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-bar-fill"></div>
+                </div>
+                <div class="progress-text">0/100</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="legend-container">
+            <h2>Greenwashing Categories Legend</h2>
+            <ul class="color-legend">
+                <li><span class="legend-color lesser-evil-color"></span>Lesser Evil</li>
+                <li><span class="legend-color lack-of-accuracy-color"></span>Lack of Accuracy</li>
+                <li><span class="legend-color lack-of-real-product-features-color"></span>Lack of Transmission into Real Product Features</li>
+                <li><span class="legend-color lack-of-evidence-color"></span>Lack of Evidence in Communicating Marketing Activities</li>
+                <li><span class="legend-color hidden-alternative-costs-color"></span>Hidden Alternative Costs</li>
+            </ul>
+        </div>
+    
+        <!-- Bar Chart Canvas -->
+        <div class="chart-container">
+            <canvas id="categoryChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Display highlighted PDF section -->
+    <div class="pdf-container">
+        {% if highlighted_filename %}
+            <h2 class="section-title">Highlighted PDF File</h2>
+            <div class="pdf-viewer">
+                <iframe src="{{ url_for('highlighted_file', filename=highlighted_filename) }}" width="100%" height="800px"></iframe>
+            </div>
+            <div class="download-container">
+                <a href="{{ url_for('highlighted_file', filename=highlighted_filename) }}" class="download-btn" download>
+                    <i class="fa fa-download"></i> Download Highlighted PDF
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
